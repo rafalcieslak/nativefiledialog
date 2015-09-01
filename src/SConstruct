@@ -82,6 +82,7 @@ if target_os == 'darwin':
 # Linux GTK+ 3 builds - GCC
 elif target_os == 'posix':
     nfd_files.append('nfd_gtk.c')
+    nfd_env.Append( CFLAGS=['-fPIC'] )
     nfd_env.ParseConfig( 'pkg-config --cflags gtk+-3.0' )
 
 # Windows builds - Visual Studio
